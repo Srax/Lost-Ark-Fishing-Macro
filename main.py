@@ -55,59 +55,17 @@ def runFishingCycle():
 
 
 while isRunning == True:
-    time.sleep(0.5)
-    print(isRegularPointer())
-    # if quitButtonIsPressed(True):
-    #     break
-    # else:
-    #     if gw.getActiveWindow() == lostArkWindow:
-    #         if isFishingMenuOpen():
-    #             runFishingCycle()
-    #         else:
-    #             print("Please open the fish menu (B)")
-    #             time.sleep(2)
-    #     else:
-    #         print("Lost Ark is not running in the foreground!")
-    #         print("To continue, tab into the game and keep the window open!\n")
-    #         time.sleep(5)
+    if quitButtonIsPressed(True):
+        break
+    else:
+        if gw.getActiveWindow() == lostArkWindow:
+            if isFishingMenuOpen():
+                runFishingCycle()
+            else:
+                print("Please open the fish menu (B)")
+                time.sleep(2)
+        else:
+            print("Lost Ark is not running in the foreground!")
+            print("To continue, tab into the game and keep the window open!\n")
+            time.sleep(5)
     
-    
-
-
-
-
-
-# def run():
-#     while isRunning == True:
-#         if isFishingMenuOpen():
-#             print("Fish menu open!")
-#             if isFishing():
-#                 print("We are fishing!")
-#                 if isBite():
-#                     pyautogui.press('e')
-#                     print("Attempting to catch fish!")
-#                 else:
-#                     print("No bite!")
-#                     time.sleep(0.125)
-#             else:
-#                 print("We are not fishing!")
-#                 pyautogui.press('e')
-#                 time.sleep(0.125)
-#         else:
-#             print("Fish menu not open")
-#             time.sleep(2)
-#             pyautogui.press('b')
-
-# run()
-
-# def click(x,y):
-#     win32api.SetCursorPos((x,y))
-#     win32api.win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0,0)
-#     time.sleep(0.01)
-#     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0,0)
-
-# while keyboard.is_pressed("q") == False:
-#     print("Hello world!")
-#     sleep(1)
-#     if pyautogui.pixel(960,480)[0] == 0:
-#         print("lol")
